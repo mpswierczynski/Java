@@ -1,0 +1,81 @@
+package main.java;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Loteria {
+    public static void main(String[] args) throws InterruptedException {
+
+        Scanner skan = new Scanner(System.in);
+        Random losowanie = new Random();
+
+        int[] wybrane = new int[6];
+
+        for (int i = 0; i < wybrane.length; i++) {
+            System.out.println("Wpisz kolejną liczbę z zakresu od 1 do 24.");
+            wybrane[i] = skan.nextInt();
+            if (wybrane[i] > 25 || wybrane[i] < 0) {
+                System.out.println("Wybrana liczba jest niewłaściwa.");
+                i--;
+            }
+        }
+
+        for (int wybrana : wybrane) {
+            System.out.println(wybrana);
+
+
+        }
+
+        System.out.print("Losujemy...\n");
+        int przerwa = 2;
+        int[] wylosowane = new int[6];
+
+        for (int i = 0; i < wylosowane.length; i++) {
+            System.out.println("Kolejna wylosowana liczba to: ");
+            wylosowane[i] = losowanie.nextInt(25) + 1;
+            System.out.println(wylosowane[i]);
+            for (int j = 0; j < przerwa; j++) {
+                Thread.sleep(1000);
+                System.out.print(".");
+
+
+            }
+        }
+        int trafione = 0;
+        for (int wybrana : wybrane) {
+            for (int wylosowana : wylosowane) {
+
+                if (wybrana == wylosowana) {
+                    System.out.println("Trafiona(e) liczba(y) to " + wylosowana);
+                    trafione++;
+                }
+            }
+        }
+        System.out.println("Trafiłeś łącznie " + trafione);
+        switch (trafione) {
+            case 0:
+                System.out.println("Nic nie wygrałeś");
+                break;
+            case 1:
+                System.out.println("Nic nie wygrałeś");
+                break;
+            case 2:
+                System.out.println("Nic nie wygrałeś");
+                break;
+            case 3:
+                System.out.println("Wygrałeś 16 zł");
+                break;
+            case 4:
+                System.out.println("Wygrałeś 200 zł");
+                break;
+            case 5:
+                System.out.println("Wygrałeś 4000 zł");
+                break;
+            case 6:
+                System.out.println("Wygrałeś 1 500 000 zł");
+                break;
+
+
+        }
+    }
+}
