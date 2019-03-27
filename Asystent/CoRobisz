@@ -1,0 +1,32 @@
+package main.zaawansowaneNieobiektowe.asystent;
+
+
+import static main.zaawansowaneNieobiektowe.asystent.Asystent.*;
+import static main.zaawansowaneNieobiektowe.asystent.FunkcjeMenu.*;
+
+public class CoRobisz {
+    public static void coRobisz() {
+        drukujCoRobisz();
+        zadajPytanieJezykowe();
+        pobierzOdpowiedz();
+
+    }
+
+    public static void drukujCoRobisz() {
+        powiedz("Uczę się też trzech języków! Polskiego, angielskiego i hiszpańskiego! Pomożesz mi?");
+        String[] jezyki = {"angielskiego", "polskiego", "hiszpańskiego"};
+        jezyk = random.nextInt(jezyki.length);
+        powiedz("Obecnie powtarzam podstawy języka " + jezyki[jezyk]);
+    }
+
+    public static void zadajPytanieJezykowe() {
+
+        String[] pytania = {"Jak powiedzieć po angielsku, że coś nie wyszło?", "Jaki znasz synonim dla słowa 'miło'?", "Jak pożegnałbyś kogoś po hiszpańsku?"};
+        powiedz(pytania[jezyk]);
+    }
+
+    public static void pobierzOdpowiedz() {
+        odpowiedz = skan.nextLine();
+        powiedz("Ok, dzięki. Postaram się zapamiętać.");
+    }
+}
