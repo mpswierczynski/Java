@@ -1,0 +1,30 @@
+package main.zaawansowaneNieobiektowe.Inne;
+
+import java.util.Scanner;
+
+public class MetodyZwracajace {
+    public static void main(String[] args) {
+
+        System.out.println(pobierzLiczbe());
+    }
+
+    public static int pobierzLiczbe() {
+        Scanner skan = new Scanner(System.in);
+        System.out.println("Podaj liczbę:");
+        int liczba = skan.nextInt();
+        return liczba;
+    }
+
+    public static boolean isEven(int liczba) {
+        if (liczba % 2 == 0) {
+            System.out.println("LIczba jest parzysta");
+            return true;
+        } else {
+            System.out.println("Liczba jest nieparzysta");
+            return false;
+        }
+
+    }
+
+
+}
