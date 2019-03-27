@@ -1,0 +1,40 @@
+package main.zaawansowaneNieobiektowe.asystent;
+
+import static main.zaawansowaneNieobiektowe.asystent.Asystent.*;
+
+public class FunkcjeMenu {
+
+    public static void wylosujImie() {
+        String[] tabelaImion = {"Bocik", "Maszynka", "Suszarka"};
+        int losujImie = random.nextInt(tabelaImion.length);
+        imieBota = tabelaImion[losujImie];
+    }
+
+
+    public static void powiedz(String kwestia) {
+        System.out.println(imieBota + ": " + kwestia);
+
+    }
+
+    public static void przywitaj() {
+        String[] przywitania = {"Cześć!", "Dzień dobry!", "Jak leci?", "Siema!", "Serwus!"};
+        int przyw1 = random.nextInt(przywitania.length);
+        String wylosowanePrzywitanie = przywitania[przyw1];
+        powiedz(wylosowanePrzywitanie);
+    }
+    public static void pozegnaj() {
+        String ostatecznePozegnanie = "";
+
+        if (jezyk == 2) {
+            ostatecznePozegnanie = odpowiedz;
+        } else {
+            String papatka = "pa";
+            int liczbaPowtorzen = random.nextInt(5) + 1;
+
+            for (int i = 0; i < liczbaPowtorzen; i++) {
+                ostatecznePozegnanie += papatka;
+            }
+        }
+        powiedz(ostatecznePozegnanie + "!");
+    }
+}
