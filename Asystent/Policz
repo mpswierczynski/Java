@@ -1,0 +1,57 @@
+package main.zaawansowaneNieobiektowe.asystent;
+
+import static main.zaawansowaneNieobiektowe.asystent.Asystent.*;
+
+public class Policz {
+
+    public static void policz() {
+        System.out.println("Podaj pierwszą liczbę:");
+        int pierwsza = skan.nextInt();
+        System.out.println("Podaj drugą liczbę:");
+        int druga = skan.nextInt();
+        System.out.println("Podaj znak działania (+, -, * lub /:");
+        skan.nextLine();
+        String rownanie = skan.nextLine();
+
+        switch (rownanie) {
+            case "+":
+                dodawanie(pierwsza, druga);
+                break;
+            case "-":
+                odejmowanie(pierwsza, druga);
+                break;
+            case "*":
+                mnozenie(pierwsza, druga);
+                break;
+            case "/":
+                dzielenie(pierwsza, druga);
+                break;
+            default:
+                System.out.println("Podałeś niepoprawny znak");
+        }
+    }
+
+    public static void dodawanie(int pierwsza, int druga) {
+        int wynikDodawania = pierwsza + druga;
+        System.out.println(wynikDodawania);
+    }
+
+    public static void odejmowanie(int pierwsza, int druga) {
+        int wynikOdejmowania = pierwsza - druga;
+        System.out.println(wynikOdejmowania);
+    }
+
+    public static void mnozenie(int pierwsza, int druga) {
+        int wynikMnozenia = pierwsza * druga;
+        System.out.println(wynikMnozenia);
+    }
+
+    public static void dzielenie(int pierwsza, int druga) {
+        if (pierwsza != 0 && druga != 0) {
+            int wynikDzielenia = pierwsza / druga;
+            System.out.println(wynikDzielenia);
+        } else {
+            System.out.println("Przy dzieleniu nie wolno używać zera");
+        }
+    }
+}
