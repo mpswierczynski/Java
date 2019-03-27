@@ -1,0 +1,67 @@
+package main.zaawansowaneNieobiektowe.asystent;
+
+import java.util.Random;
+import java.util.Scanner;
+
+import static main.zaawansowaneNieobiektowe.asystent.CoRobisz.coRobisz;
+import static main.zaawansowaneNieobiektowe.asystent.FunkcjeMenu.*;
+import static main.zaawansowaneNieobiektowe.asystent.Policz.*;
+
+
+public class Asystent {
+    public static String odpowiedz;
+    public static Random random = new Random();
+    public static int jezyk;
+    public static Scanner skan = new Scanner(System.in);
+    public static String imieBota;
+
+    public static void main(String[] args) {
+        rozmawiaj();
+    }
+    public static void rozmawiaj() {
+        wylosujImie();
+        przywitaj();
+        menu();
+        pozegnaj();
+    }
+    public static void menu() {
+        boolean czyGadac = true;
+        Scanner skan = new Scanner(System.in);
+
+        while (czyGadac) {
+            powiedz("O co chciałbyś mnie zapytać?");
+            System.out.println("1. Co robisz?");
+            System.out.println("2. Gdzie byłeś ostatnio?");
+            System.out.println("3. Czy widziałeś ostatnio jakiś dobry film?");
+            System.out.println("4. Czy widziałeś ostatnio jakiś kiepski film?");
+            System.out.println("5. Czy chcesz coś policzyć?");
+            System.out.println("6. Zakończ rozmowę");
+            int decyzja = skan.nextInt();
+
+            switch (decyzja) {
+                case 1:
+                    powiedz("Smęcę sobie tutaj.");
+                    coRobisz();
+                    czyGadac = false;
+                    break;
+                case 2:
+                    powiedz("Na wakacjach. Nic szczególnego.");
+                    break;
+                case 3:
+                    powiedz("Nie... chociaż ten Green book był niezły.");
+                    break;
+                case 4:
+                    powiedz("Hmm... wystarczy podać tytuł któregoś z superbohaterami... Wszystkie ssą.");
+                    break;
+                case 5:
+                    policz();
+                    break;
+                case 6:
+                    powiedz("Okej, pogadamy później");
+                    czyGadac = false;
+                    break;
+            }
+            System.out.println(" ");
+        }
+    }
+}
